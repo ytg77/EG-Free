@@ -6,12 +6,18 @@ import mimetypes
 
 
 def getImages(imageArray):
+    cwd = os.getcwd()
+    fd = os.path.join(cwd, r'imageTemp')
+    if not os.path.exists(fd):
+        os.mkdir(fd)
+    
     files = glob.glob('imageTemp/*')
     if files:
         # deletion
         for f in files:
             os.remove(f)
     
+    ext = []
     # download
     for index in range(len(imageArray)):
         response = requests.get(imageArray[index], stream=True)
@@ -20,3 +26,6 @@ def getImages(imageArray):
         extension = mimetypes.guess_extension(content_type)
         img = Image.open(response.raw)
         img.save('imageTemp/'+str(index)+extension)
+        ext.append(extension)
+        
+    return ext

@@ -2,6 +2,7 @@
 import keys
 import requests
 from pprint import pprint
+# todo remove pprint
 
 # url = "https://free-epic-games.p.rapidapi.com/free"
 
@@ -22,3 +23,4 @@ from pprint import pprint
 # print(currentImage)
 
 currentName = ['First', 'Second', 'Third']
+currentImage = ['https://cdn-icons-png.flaticon.com/512/334/334043.png', 'https://cdn-icons-png.flaticon.com/512/1999/1999027.png', 'https://cdn-icons-png.flaticon.com/512/1999/1999040.png']
